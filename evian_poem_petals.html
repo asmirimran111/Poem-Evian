@@ -1,0 +1,192 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>For Evian 🌸</title>
+  <style>
+    * {
+      margin: 0; padding: 0; box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Georgia', serif;
+      background: linear-gradient(to bottom right, #fceaff, #ffe3e3);
+      color: #4d2c5e;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 30px 15px;
+      animation: fadeIn 2s ease-in;
+      overflow-x: hidden;
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      margin-bottom: 20px;
+      text-align: center;
+      color: #6e3d87;
+      animation: slideDown 2s ease-in-out;
+      position: relative;
+      z-index: 2;
+    }
+
+    .poem {
+      max-width: 800px;
+      background: rgba(255, 255, 255, 0.85);
+      border-radius: 20px;
+      padding: 30px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+      animation: slideUp 2s ease-in-out;
+      transition: 0.3s;
+      z-index: 2;
+      position: relative;
+    }
+
+    .poem p {
+      font-size: 1.2rem;
+      margin-bottom: 18px;
+      line-height: 1.8;
+    }
+
+    .poem p:hover {
+      background: #fff3ff;
+      padding-left: 10px;
+      border-left: 4px solid #d274c7;
+    }
+
+    .signature {
+      text-align: right;
+      margin-top: 30px;
+      font-style: italic;
+      font-size: 1rem;
+      color: #a8779f;
+    }
+
+    .heart-btn, .whatsapp-btn {
+      margin-top: 25px;
+      padding: 12px 25px;
+      border: 2px solid #a03f8e;
+      border-radius: 25px;
+      background: transparent;
+      color: #a03f8e;
+      font-weight: bold;
+      cursor: pointer;
+      font-size: 1.1rem;
+      transition: 0.3s ease;
+      z-index: 2;
+      position: relative;
+    }
+
+    .heart-btn:hover, .whatsapp-btn:hover {
+      background: #a03f8e;
+      color: white;
+      transform: scale(1.05);
+    }
+
+    .whatsapp-btn {
+      display: inline-block;
+      margin-bottom: 50px;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; } to { opacity: 1; }
+    }
+
+    @keyframes slideUp {
+      from { transform: translateY(40px); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
+    }
+
+    @keyframes slideDown {
+      from { transform: translateY(-40px); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
+    }
+
+    /* Petal Styles */
+    .petal {
+      position: fixed;
+      top: -50px;
+      width: 20px;
+      height: 20px;
+      background-image: url('https://cdn-icons-png.flaticon.com/512/777/777022.png');
+      background-size: contain;
+      background-repeat: no-repeat;
+      pointer-events: none;
+      z-index: 1;
+      animation: fall 10s linear infinite, sway 3s ease-in-out infinite;
+    }
+
+    @keyframes fall {
+      0% { transform: translateY(0); opacity: 1; }
+      100% { transform: translateY(110vh); opacity: 0; }
+    }
+
+    @keyframes sway {
+      0%, 100% { transform: translateX(0); }
+      50% { transform: translateX(30px); }
+    }
+
+    @media screen and (max-width: 600px) {
+      h1 { font-size: 2rem; }
+      .poem p { font-size: 1rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <h1>🌸 A Move Beyond the Board 🌸</h1>
+
+  <div class="poem">
+    <p>We met on squares of black and white,</p>
+    <p>Where silence spoke and minds took flight.</p>
+    <p>A queen, a knight, a quiet plan—</p>
+    <p>Then came a player, kind as sun: Evian.</p>
+
+    <p>She spoke of bunnies, owls at night,</p>
+    <p>Of daisies dancing in soft light.</p>
+    <p>A heart that blooms like lilac days,</p>
+    <p>In every word, her warmth would stay.</p>
+
+    <p>She laughed of pasta, dreamed of fries,</p>
+    <p>Potatoes golden, joy in eyes.</p>
+    <p>A soul that finds delight in taste,</p>
+    <p>In fleeting time, no thought’s a waste.</p>
+
+    <p>She isn’t just a game to play,</p>
+    <p>She’s lavender at end of day.</p>
+    <p>A friend who makes the world feel new,</p>
+    <p>In every match, a bond just grew.</p>
+
+    <p>And though the chessboard may be done,</p>
+    <p>A deeper match has just begun.</p>
+    <p>If friends are flowers we could tend...</p>
+    <p>Would you, perhaps... my best friend send</p>
+    <p>A sign, a smile, a gentle “yes”?</p>
+    <p>In hidden words, I just confess.</p>
+
+    <div class="signature">— Yours in checkmate & choice ♟️</div>
+  </div>
+
+  <button class="heart-btn" onclick="alert('Maybe your next move decides the friendship :)')">Your Move ♡</button>
+
+  <a class="whatsapp-btn" href="https://wa.me/923329356129?text=Hey...%20I%20think%20you%20already%20captured%20my%20king%20👑,%20but%20I%20wouldn't%20mind%20playing%20this%20match%20forever.%20😊" target="_blank">
+    💌 Send me a message
+  </a>
+
+  <script>
+    // Generate multiple petals
+    for (let i = 0; i < 30; i++) {
+      let petal = document.createElement("div");
+      petal.classList.add("petal");
+      petal.style.left = Math.random() * 100 + "vw";
+      petal.style.animationDelay = Math.random() * 10 + "s";
+      petal.style.animationDuration = (8 + Math.random() * 5) + "s";
+      document.body.appendChild(petal);
+    }
+  </script>
+
+</body>
+</html>
